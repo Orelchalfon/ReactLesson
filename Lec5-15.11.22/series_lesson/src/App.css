@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  display: none;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.delMark {
+  position: relative;
+  width: .4rem;
+  
+
+  translate: 0;
+  background:transparent;
+  border-radius: 1px;
+}
+.delMark::before,.delMark::after {
+  content: "";
+  position: absolute;
+  width: .65rem;
+  height: 1.25px;
+  left: 0;
+  background: rgba(10, 10, 10, .7);
+  border-radius: 1px;
+transition: 725ms;
+}
+.delMark::before{
+  top:-4px;
+  rotate:-45deg;
+}.delMark::after{
+  top: -4px;
+  rotate: 45deg;
+}
+.delMark:hover.delMark::before{
+  
+ transition-delay: .125s;
+  transform: rotate(270deg);
+}
+.delMark:hover.delMark::after{
+  transition-delay: .3s;
+
+  transform: rotate(450deg);
+}

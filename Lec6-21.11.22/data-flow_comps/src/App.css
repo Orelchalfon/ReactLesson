@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  display: none;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.listCon{
+  padding-inline:1rem;
+  margin-top:10px;
+  font-size: 1rem;
+  gap: 5px;
+  display: flex;
+  background: lightblue;
+  width: 9rem;
+  height: 1.5rem;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+.delMark {
+  position: relative;
+  width: 0.5rem;
+  height: 1px;
+  translate: 15px 12px;
+  scale: 0.5;
+  opacity: 0;
+  border-radius: 1px;
+  transform-origin: right;
+  transition: 0.5s;
+  transition-delay: translate 0.25s;
+}
+.delMark::before,
+.delMark::after {
+  content: "";
+  position: absolute;
+  width: 0.65rem;
+  height: 1.25px;
+  background: #282c34;
+  /* background: whitesmoke; */
+  border-radius: 1px;
+  transition: 725ms;
+}
+.delMark::before {
+  rotate: 45deg;
+}
+.delMark::after {
+  rotate: -45deg;
+}
+.listCon:hover > .delMark {
+  scale: 0.9;
+  opacity: 1;
+  translate: -2px 12px;
+  rotate: 360deg;
+
+  transition-delay: 0.375ms;
+}
+.delMark:hover.delMark::before {
+  transition-delay: 0.125s;
+  transform: rotate(270deg);
+}
+.delMark:hover.delMark::after {
+  transition-delay: 0.3s;
+  transform: rotate(450deg);
+}
