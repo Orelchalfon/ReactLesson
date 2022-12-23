@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: "Montserrat", sans-serif;
+  }
+  body {
+    background: #eee;
+    padding: 0 16px;
+  }
+  
+  header {
+    background-color: #f5ba13;
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  header h1 {
+    color: #fff;
+    font-family: "McLaren", cursive;
+    font-weight: 200;
+  }
+  
+  footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+  }
+  
+  footer p {
+    color: #ccc;
+  }
+  .note {
+    position: relative;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 1rem 5px 5px 5px;
+  
+    width: 240px;
+    margin: 16px;
+    float: left;
+    overflow: hidden;
+    transition: all 1s;
+  }
+  .note h1 {
+    display: inline-block;
+    font-size: 1.1em;
+    margin-bottom: 6px;
+    margin-right: 35%;
+  }
+  .note p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  #noteMark {
+    position: absolute;
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    border-radius: 30px 5px;
+    background-color: rosybrown;
+    top: -0.5rem;
+    left: -0.5rem;
+  }
+  #dellNote {
+    position: relative;
+    margin-left: 15px;
+    width: 1rem;
+    height: 2px;
+    border-radius: 5px 30px;
+    background-color: black;
+    translate: 0 10px;
+  }
+  
+  #dellNote::before,
+  #dellNote::after {
+    content: "";
+    position: absolute;
+  
+    width: 1rem;
+    scale: 0.35 1;
+    height: 2px;
+    border-radius: 5px 30px;
+    background-color: black;
+    transition: scale 0.525s ease-in-out 0.35s, background 0.5s ease-in-out 0.5s,
+      translate 0.3s ease-in 0.1s, rotate 0.5s ease-out 1s;
+  }
+  #dellNote::before {
+    translate: 0px -2px;
+  }
+  #dellNote::after {
+    translate: 0px 2px;
+  }
+  .note:hover #dellNote::before,
+  .note:hover #dellNote::after {
+    translate: 0;
+    background-color: rosybrown;
+    scale: 0.8 0.7;
+    rotate: -135deg;
+  }
+  
+  .note:hover #dellNote::after {
+    /* rotate: -225deg; */
+    rotate: -225deg;
+  }
+  .note #dellNote::before:hover,
+  .note #dellNote::after:hover {
+    scale: 2 0.7;
+  }
+  

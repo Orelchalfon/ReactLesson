@@ -1,0 +1,163 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  display: none;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background: #eee;
+  padding: 2px 0px;
+ 
+}
+
+header {
+  width: inherit;
+  background-color: #f5ba13;
+ 
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+}
+
+.note {
+  position: relative;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 1rem 5px 5px 5px;
+
+  width: 240px;
+  margin: 16px;
+  float: left;
+  overflow: hidden;
+  transition: all 1s;
+}
+.note h1 {
+  display: inline-block;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  margin-right: 35%;
+}
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+#noteMark {
+  position: absolute;
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  border-radius: 30px 5px;
+  background-color: rosybrown;
+  top: -0.5rem;
+  left: -0.5rem;
+}
+#dellNote {
+  position: relative;
+  margin-left: 15px;
+  width: 1rem;
+  height: 2px;
+  border-radius: 5px 30px;
+  background-color: black;
+}
+
+#dellNote::before,
+#dellNote::after {
+  content: "";
+  position: absolute;
+  left: 100px;
+  width: 1rem;
+  scale: 0.35 1;
+  height: 2px;
+  border-radius: 5px 30px;
+  background-color: black;
+  transition:left .25s ease-in-out .25s, scale 0.525s ease-in-out 0.35s,background 0.5s ease-in-out 0.5s,
+    translate 0.3s ease-in 0.5s, rotate 0.5s ease-out 1s;
+}
+#dellNote::before {
+  translate: 0 -2px;
+}
+#dellNote::after {
+  translate: 0 2px;
+}
+.note:hover #dellNote::before,
+.note:hover #dellNote::after {
+  
+left: 50px;
+translate: 0;
+  background-color: rosybrown;
+  scale: 0.8 0.7;
+  rotate: -135deg;
+}
+
+.note:hover #dellNote::after {
+  /* rotate: -225deg; */
+  rotate: -225deg;
+}
+.note #dellNote::before:hover,
+.note #dellNote::after:hover {
+  scale: 2 0.7;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  color: #ccc;
+  margin-right: 10px;
+}
