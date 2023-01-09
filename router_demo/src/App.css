@@ -1,0 +1,247 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  position: relative;
+  height: 100vh;
+  font-size: 2rem;
+  background-color: rgb(247, 100, 173);
+
+  color: rgba(255, 255, 255, 0.8);
+}
+.Home {
+  height: 100%;
+  backdrop-filter: blur(200px);
+}
+.box {
+  position: absolute;
+  width: 400px;
+  aspect-ratio: 1;
+  opacity: 0.7;
+}
+.purple {
+  background-color: blueviolet;
+  top: 10%;
+
+  right: 5%;
+}
+.blue {
+  background-color: #3dd1e1;
+  bottom: 0;
+}
+.orange {
+  background-color: orange;
+  left: 30%;
+}
+.lightblue {
+  background-color: turquoise;
+  height: 50%;
+  opacity: 0.7;
+  right: 0;
+}
+.nav {
+  position: sticky;
+  top: 0;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+
+  background-color: rgba(255, 255, 255, 0.625);
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.nav ul {
+  display: flex;
+  gap: 1rem;
+
+  width: min-content;
+  list-style: none;
+}
+
+.nav_link >* {
+  text-decoration: none;
+  color: #282c34;
+  transition: 0.3s;
+}
+div:is(.nav_link) {
+  margin-right: auto;
+  width:clamp(200px,50%,150px);
+}
+:is(.nav_link:is(:hover, :focus)) > * {
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+span:is(.nav_link){
+  color: #282c34;
+  transition: .3s;
+}span:is(.nav_link:is(:hover,:focus,:active)){
+  letter-spacing: 1px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+span:is(.guest){
+  margin-right: 10px;
+  margin-left: 25px;
+  
+  min-width: max-content;
+  font-size: 1.5rem;
+  
+}
+span:is(.guest:has(span)) span{
+color: lightseagreen;
+font-family:cursive;
+font-size: 2rem;
+ margin:0 5px;
+}
+span:is(.nav_link){
+  margin-right: 10px;
+
+  width: clamp(85%,50%,10%);
+}
+
+.mainSec {
+  height: 80vh;
+  display: grid;
+  place-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  min-width: 20rem;
+  aspect-ratio: 3/4;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.25);
+}
+.inp-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  align-items: center;
+  /* background-color:rgba(255, 255, 255, .625); */
+  width: 90%;
+  height: 37%;
+}
+.inp {
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  outline: none;
+  padding-inline-start: 0.25rem;
+  border-radius: 5px;
+  font-size: 1.125rem;
+  color: lightcoral;
+
+  box-shadow: inset 100vw 0px 1px 0px rgba(0, 0, 0, 0.25);
+  transition: all 1.5s, box-shadow 0.25s;
+
+  transition-delay: 0.125s;
+}
+input:focus {
+  box-shadow: inset 0vw 0px 10px 0px rgba(0, 0, 0, 0.25);
+  transition-delay: box-shadow 1s;
+}
+input::placeholder {
+  padding-inline-start: 0.25rem;
+  color: rgba(0, 0, 0, 0.5);
+  transition: 350ms;
+}
+
+input:focus::placeholder {
+  padding-inline-start: 0.5rem;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+.btn {
+  padding: 0.25rem 1rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.625);
+  box-shadow: 0rem 0px 5px 0px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1px;
+  transition: 0.25s;
+
+  cursor: pointer;
+}
+.btn:hover {
+  color: white;
+  background-color: initial;
+  letter-spacing: 0.5px;
+
+  box-shadow: inset 0rem 0px 20px 100px/ 5px 0px 5px 1px rgba(0, 0, 0, 0.25);
+}
+.footerSec {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  width: 100%;
+  height: 10vh;
+
+  background-color: rgba(255, 255, 255, 0.625);
+  box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.25);
+  color: #282c34;
+  text-align: center;
+
+  font-size: 1rem;
+}
+.hidden {
+  visibility: hidden;
+}
