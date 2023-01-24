@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Cart from "./Pages/Cart";
+import AddNote from "./Pages/AddNote";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import MyNotes from "./Pages/MyNotes";
 import Reg from "./Pages/Reg";
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Reg />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/addNote" element={<AddNote/>} />
+        <Route path="/myNote" element={<MyNotes/>} />
       </Routes>
     </div>
   );

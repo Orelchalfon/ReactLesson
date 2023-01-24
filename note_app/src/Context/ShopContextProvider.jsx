@@ -6,13 +6,17 @@ export default function ShopContextProvider(props) {
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
   const [passAgain, setPassAgain] = useState("");
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [notes, setNotes] = useState([]);
+  const [id, setId] = useState(1);
   const [Users, setUsers] = useState([
     { uName: "orel", uPass: "oc" },
     { uName: "kobi", uPass: "ko" },
     { uName: "tamar", uPass: "ta" },
   ]);
-  
-  const [isLogged, setIsLogged] = useState(false);
+
+  // const [isLogged, setIsLogged] = useState(false);
   const [loggedUser, setLoggedUser] = useState();
 
   const regValidation = () => {
@@ -41,8 +45,28 @@ export default function ShopContextProvider(props) {
       alert(`⛔InValid Inputs`);
     } else {
       // setLoggedUser(user.uName);
-      navigateTo(`/`,{state:user});
+      navigateTo(`/`, { state: user });
     }
+  };
+  const addNote = () => {
+    setId((prev) => prev + 1);
+    // console.log(id,title,desc);
+    const newNotes = [...notes, { id, title, desc }];
+    console.log(newNotes);
+    setNotes(newNotes);
+    // console.log(notes);
+  };
+  const dellNoteById = (id) => {
+    const newNotes = notes.filter((note) => note.id !== id);
+    console.log(newNotes);
+    setNotes(newNotes);
+  };
+  const updateCompDate = (id, title, desc) => {
+    let newNotes = [...notes];
+    const note = newNotes.find((note) => note.id === id);
+    note.title = title;
+    note.desc = desc;
+    setNotes(newNotes)
   };
   return (
     <ShopContext.Provider
@@ -58,8 +82,14 @@ export default function ShopContextProvider(props) {
         loggedUser,
         setLoggedUser,
         loginValidation,
-        isLogged,
-        setIsLogged
+        setTitle,
+        setDesc,
+        addNote,
+        notes,
+        dellNoteById,updateCompDate
+
+        // isLogged,
+        // setIsLogged
       }}
     >
       {props.children}

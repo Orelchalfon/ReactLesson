@@ -102,45 +102,45 @@
   list-style: none;
 }
 
-.nav_link >* {
+.nav_link > * {
   text-decoration: none;
   color: #282c34;
   transition: 0.3s;
 }
 div:is(.nav_link) {
   margin-right: auto;
-  width:clamp(200px,50%,150px);
+  width: clamp(200px, 50%, 150px);
 }
 :is(.nav_link:is(:hover, :focus)) > * {
   font-weight: bolder;
   letter-spacing: 1px;
 }
-span:is(.nav_link){
+span:is(.nav_link) {
   color: #282c34;
-  transition: .3s;
-}span:is(.nav_link:is(:hover,:focus,:active)){
+  transition: 0.3s;
+}
+span:is(.nav_link:is(:hover, :focus, :active)) {
   letter-spacing: 1px;
   font-weight: bolder;
   cursor: pointer;
 }
-span:is(.guest){
+span:is(.guest) {
   margin-right: 10px;
   margin-left: 25px;
-  
+
   min-width: max-content;
   font-size: 1.5rem;
-  
 }
-span:is(.guest:has(span)) span{
-color: lightseagreen;
-font-family:cursive;
-font-size: 2rem;
- margin:0 5px;
+span:is(.guest:has(span)) span {
+  color: lightseagreen;
+  font-family: cursive;
+  font-size: 2rem;
+  margin: 0 5px;
 }
-span:is(.nav_link){
+span:is(.nav_link) {
   margin-right: 10px;
 
-  width: clamp(85%,50%,10%);
+  width: clamp(85%, 50%, 10%);
 }
 
 .mainSec {
@@ -151,10 +151,10 @@ span:is(.nav_link){
 .form {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 
-  min-width: 20rem;
+  width: clamp(17rem, 100%, 18rem);
   aspect-ratio: 3/4;
   padding: 0.5rem;
   border-radius: 1rem;
@@ -164,12 +164,15 @@ span:is(.nav_link){
 .inp-group {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 1.25rem;
   align-items: center;
   /* background-color:rgba(255, 255, 255, .625); */
   width: 90%;
-  height: 37%;
+  height: 10rem;
+}
+.reg {
+  height: 15rem;
 }
 .inp {
   width: 100%;
@@ -186,17 +189,23 @@ span:is(.nav_link){
 
   transition-delay: 0.125s;
 }
-input:focus {
+.inp:is(input, textarea):focus {
   box-shadow: inset 0vw 0px 10px 0px rgba(0, 0, 0, 0.25);
   transition-delay: box-shadow 1s;
 }
-input::placeholder {
+.inp:is(input, textarea)::placeholder {
   padding-inline-start: 0.25rem;
   color: rgba(0, 0, 0, 0.5);
   transition: 350ms;
 }
+.inp:is(textarea):focus {
+  padding-inline-start: 0.5rem;
+  height: 5rem;
+  letter-spacing: 1px;
+  color: lightcoral;
+}
 
-input:focus::placeholder {
+.inp:is(input):focus::placeholder {
   padding-inline-start: 0.5rem;
   letter-spacing: 1px;
   color: rgba(0, 0, 0, 0.75);
@@ -235,13 +244,69 @@ input:focus::placeholder {
   width: 100%;
   height: 10vh;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background-color: rgba(255, 255, 255, 0.625);
   box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.25);
   color: #282c34;
-  text-align: center;
-
-  font-size: 1rem;
+  font-size: 2rem;
 }
 .hidden {
   visibility: hidden;
+}
+
+/* note */
+
+.note {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  color: #282c34;
+  float: left;
+  transition: all 1s;
+}
+.note .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.note p {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note button {
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  color: #f5ba13;
+  border: none;
+  width: min-content;
+  cursor: pointer;
+  outline: none;
+}
+.note input {
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background: lightcoral;
+  box-shadow: inset -20vw 20px 0px 5px white;
+
+  transition: all 1s;
+}
+.note input:focus {
+  box-shadow: inset -2.5vw 20px 0px 5px white;
+
+  padding-left: 10px;
 }

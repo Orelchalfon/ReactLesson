@@ -1,28 +1,18 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import Footer from "../AppComps/Footer";
+import Header from "../AppComps/Header";
 import { ShopContext } from "../Context/ShopContextProvider";
 
 export default function Login(props) {
   const navigateTo = useNavigate();
-  const {  setName,  setPass, loginValidation } = useContext(ShopContext);
+  const { setName, setPass, loginValidation } = useContext(ShopContext);
   return (
     <div className="Home">
-      <header className="nav">
-        <div className="nav_link">
-          <Link to="/">Home</Link>
-        </div>
-        <ul>
-          <li className="nav_link">
-            <Link to="/cart">Cart</Link>
-          </li>
-          <li className="nav_link">
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
-      </header>
+      <Header />
       <main className="mainSec">
         <div className="form">
-          <h3 className="title">Login</h3>
+          <h3 className="title" >Login</h3>
           <div className="inp-group">
             <input
               onChange={(e) => {
@@ -32,7 +22,6 @@ export default function Login(props) {
               className="inp"
               placeholder="enter mail. . ."
               required
-
             />
             <input
               onChange={(e) => {
@@ -42,7 +31,6 @@ export default function Login(props) {
               className="inp"
               placeholder="enter password. . ."
               required
-
             />
             <input
               type="text"
@@ -58,16 +46,13 @@ export default function Login(props) {
             >
               SignUp
             </button>
-            <button
-              onClick={loginValidation}
-              className="btn Login"
-            >
+            <button onClick={loginValidation} className="btn Login">
               Login
             </button>
           </div>
         </div>
       </main>
-      <footer className="footerSec">©️ OrelChalfon</footer>
+      <Footer/>
     </div>
   );
 }

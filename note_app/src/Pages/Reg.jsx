@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import Footer from "../AppComps/Footer";
+import Header from "../AppComps/Header";
 import { ShopContext } from "../Context/ShopContextProvider";
 
 export default function Reg() {
@@ -11,33 +12,20 @@ export default function Reg() {
     passAgain,
     setPassAgain,
     regValidation,
-  
   } = useContext(ShopContext);
   return (
     <div className="Home">
-      <header className="nav">
-        <div className="nav_link">
-          <Link to="/">Home</Link>
-        </div>
-        <ul>
-          <li className="nav_link">
-            <Link to="/cart">Cart</Link>
-          </li>
-          <li className="nav_link">
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
-      </header>
+      <Header />
       <main className="mainSec">
         <div className="form">
           <h3 className="title">Register</h3>
           <div className="inp-group">
             <input
-            onFocus={()=>{}}
+              onFocus={() => {}}
               onChange={(e) => {
                 const inp = e.target.value;
                 setName(inp);
-              console.log(name,pass);
+                console.log(name, pass);
               }}
               type="text"
               className="inp"
@@ -72,7 +60,7 @@ export default function Reg() {
           </div>
         </div>
       </main>
-      <footer className="footerSec">©️ OrelChalfon</footer>
+      <Footer />
     </div>
   );
 }
