@@ -1,0 +1,42 @@
+.totalCon{
+    margin:20px 0 40px ;
+    width: 100%;
+    height: max-content;
+    position: relative;
+    
+}
+
+.totalPrice {
+  width: min-content;
+  height: max-content;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  color: #282c34;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left:50%;
+  top: 50%;
+  translate: -50% -50%;
+
+
+
+}
+
+.totalPrice span {
+  border-radius: 10px;
+  display: inline-block;
+  width: max-content;
+  height: max-content;
+  background-color: lightcoral;
+}
+.cardItemList{
+  width: max-content;
+  height: max-content;
+  margin: 20px 0;
+  gap: 1rem;
+  padding: 1rem;
+  background: linear-gradient(125deg ,lightcoral ,lightblue);
+}
+
